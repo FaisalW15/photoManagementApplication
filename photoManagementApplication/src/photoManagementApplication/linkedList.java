@@ -2,8 +2,8 @@ package photoManagementApplication;
 
 public class linkedList<T> implements Lists<T> {
 
-	public node<T> head;
-	public node<T> current;
+	public Node<T> head;
+	public Node<T> current;
 	
 	public linkedList() {
 		head = current = null;
@@ -25,13 +25,13 @@ public class linkedList<T> implements Lists<T> {
 
 	@Override
 	public void insert(T e) {
-		node<T> temp;
+		Node<T> temp;
 		if (empty()) {
-			head = current = new node<T>(e);
+			head = current = new Node<T>(e);
 		}
 		else{
 			temp = current.next;
-			current.next = new node<T>(e);
+			current.next = new Node<T>(e);
 			current = current.next;
 			current.next = temp;
 			
@@ -44,30 +44,39 @@ public class linkedList<T> implements Lists<T> {
 	}
 
 	@Override
-	public void remove() {
-		if (current == head) {
+	public void remove () {
+		if (current == head) { 
 			head = head.next;
-			current = current.next;
-		}
+		} 
 		else {
-			node<T> temp = head;
-			while(temp.next != current) {
-				temp = temp.next;
-			}
-			temp.next = current.next;
-			current = current.next;
-		}
-		if (current.next == null) {
+		Node<T> tmp = head; 
+		while (tmp.next != current)
+		tmp = tmp.next;
+		tmp.next = current.next;
+		} 
+		if (current.next == null) 
 			current = head;
-		}
-		else {
-			current = current.next;
-		}
-		
+		else
+		current = current.next;
+		 } 
+	
+	// added helping methods
+	public void display() {
+	    if (head == null) {
+	        System.out.println("empty list");
+	    }
+	    Node<T> p = head;
+	    while (p != null) {
+	        System.out.print(p.data + " ");
+	        p = p.next;
+	    }
 	}
+
+	
 
 	@Override
 	public boolean full() {
+		return false;
 		 
 	}
 
@@ -82,29 +91,11 @@ public class linkedList<T> implements Lists<T> {
 	}
 
 
-
+ 
 
 	@Override
 	public T retrieve() {
 		return current.data;
-	}
-
-
-
-
-	@Override
-	public void findPrevious() {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-
-
-	@Override
-	public boolean first() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	} 
 
 }
