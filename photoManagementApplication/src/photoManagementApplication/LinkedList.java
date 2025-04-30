@@ -1,11 +1,11 @@
 package photoManagementApplication;
 
-public class linkedList<T> implements Lists<T> {
+public class LinkedList<T> implements Lists<T> {
 
 	public Node<T> head;
 	public Node<T> current;
 	
-	public linkedList() {
+	public LinkedList() {
 		head = current = null;
 	}
 	
