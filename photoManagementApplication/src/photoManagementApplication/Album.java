@@ -81,8 +81,20 @@ public class Album {
 		
 	}
     
-    //checks if list1's tags are all present in list2
-    public boolean isAPartOf(LinkedList<String> list1, LinkedList<String> list2) {
+    //checks if array1's tags are all present in list1
+    public boolean isAPartOf(String[] array1, LinkedList<String> list1) {
     	
+    	if(list1.empty()) {
+    		return false;
+    	}
+    	
+    	for(int i = 0; i<array1.length; i++) {
+    		
+    		if(!(isTagInPhoto(list1, array1[i]))) {
+    			return false;
+    		}
+    	}
+    	return true;
     }
+    
 	}
