@@ -1,12 +1,20 @@
 package photoManagementApplication;
 
-public class photoManager {
+public class PhotoManager {
 	// Constructor
-	public PhotoManager();
+	public void PhotoManager(){
+		
+	}
 	// Return all managed photos
-	public LinkedList<Photo> getPhotos();
+	public LinkedList<Photo> getPhotos(){
+		
+	}
 	// Add a photo
-	public void addPhoto(Photo p);
+	public void addPhoto(Photo p) {
+		
+	}
 	// Delete a photo
-	public void deletePhoto(String path);
+	public void deletePhoto(String path) {
+		
+	}
 	}
