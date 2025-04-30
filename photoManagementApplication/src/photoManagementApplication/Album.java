@@ -35,6 +35,13 @@ public class Album {
 	// Return all photos that satisfy the album condition
 	public LinkedList<Photo> getPhotos(){
 		
+		//split condition and place each tag in between the word "AND" in an array called conditionArray.
+		String[] conditionArray = condition.split("AND");
+		for(int i = 0; i<conditionArray.length; i++) {
+			//get rid of whitespaces before and after conditionArray[i].
+			conditionArray[i] = conditionArray[i].trim();
+		}
+		
 	}
 	// Return the number of tag comparisons used to find all photos of the album
 	public int getNbComps() {
@@ -90,11 +97,14 @@ public class Album {
     	
     	for(int i = 0; i<array1.length; i++) {
     		
+    		//if there are no falses returned, then array1 is a part of list1
     		if(!(isTagInPhoto(list1, array1[i]))) {
     			return false;
     		}
     	}
     	return true;
     }
+    
+    
     
 	}
