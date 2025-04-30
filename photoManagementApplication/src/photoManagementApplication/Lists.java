@@ -1,7 +1,7 @@
 package photoManagementApplication;
 
 public interface Lists<T> {
-	public void findfirst();
+	public void findFirst();
 	public void findNext();
 	public void insert(T e);
 	public void update(T e);

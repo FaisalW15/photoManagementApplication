@@ -12,7 +12,7 @@ public class LinkedList<T> implements Lists<T> {
 	
 	
 	
-	public void findfirst() {
+	public void findFirst() {
 		current = head;
 		
 	}

@@ -2,7 +2,7 @@ package photoManagementApplication;
 
 public class Album {
 	
-	
+	int numberOfComparisons = 0;
 	String name;
 	String condition;
 	PhotoManager photoManager;
@@ -38,12 +38,51 @@ public class Album {
 	}
 	// Return the number of tag comparisons used to find all photos of the album
 	public int getNbComps() {
-		
+		return numberOfComparisons;
 	}
 	
 	
 	
 	//additional methods
 	
+	//checks if a tag is in a photo
+    public boolean isTagInPhoto(LinkedList<String> list, String tag) { //type must be resolved, use String instead of generic T.
 	
+    	
+    	//check if list is empty.
+		if(list.empty()) {
+			return false;
+		}
+		
+		//go to start of list
+		list.findFirst();
+		
+		//go through list until the end, if the nodes data equals the tag then return true.
+		while(!(list.last())) {
+			
+		//keep track of numberOfComparisons
+			numberOfComparisons++;
+			if(list.retrieve().equals(tag)) {
+				return true;
+			}
+			
+			list.findNext();
+		}
+		
+		//check last node in list
+		numberOfComparisons++;
+		if(list.retrieve().equals(tag)) {
+			return true;
+		}
+		else {
+			return false;
+		}
+		
+		
+	}
+    
+    //checks if list1's tags are all present in list2
+    public boolean isAPartOf(LinkedList<String> list1, LinkedList<String> list2) {
+    	
+    }
 	}
