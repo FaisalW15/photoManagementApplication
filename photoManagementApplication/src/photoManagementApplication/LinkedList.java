@@ -11,18 +11,19 @@ public class LinkedList<T> implements Lists<T> {
 	
 	
 	
-	
-	public void findFirst() {
+	//Complexity of findfirst O(1)
+	public void findfirst() {
 		current = head;
 		
 	}
 
+	//Complexity of findNext O(1)
 	@Override
 	public void findNext() {
 		current = current.next;
 		
 	}
-
+	//Complexity of insert O(1)
 	@Override
 	public void insert(T e) {
 		Node<T> temp;
@@ -30,6 +31,7 @@ public class LinkedList<T> implements Lists<T> {
 			head = current = new Node<T>(e);
 		}
 		else{
+			
 			temp = current.next;
 			current.next = new Node<T>(e);
 			current = current.next;
@@ -37,12 +39,13 @@ public class LinkedList<T> implements Lists<T> {
 			
 		}
 	}
-
+	//Complexity of update O(1)
 	@Override
 	public void update(T e) {
 		current.data = e;
 	}
 
+	//Complexity of remove O(n)
 	@Override
 	public void remove () {
 		if (current == head) { 
@@ -59,7 +62,7 @@ public class LinkedList<T> implements Lists<T> {
 		else
 		current = current.next;
 		 } 
-	
+	//Complexity of full O(n)
 	// added helping methods
 	public void display() {
 	    if (head == null) {
@@ -74,17 +77,20 @@ public class LinkedList<T> implements Lists<T> {
 
 	
 
+	//Complexity of full O(1)
 	@Override
 	public boolean full() {
 		return false;
 		 
 	}
 
+	//Complexity of last O(1)
 	@Override
 	public boolean last() {
 		return current.next ==null;
 	}
 
+	//Complexity of empty O(1)
 	@Override
 	public boolean empty() {
 		return head==null;
@@ -93,6 +99,7 @@ public class LinkedList<T> implements Lists<T> {
 
  
 
+	//Complexity of retrieve O(1)
 	@Override
 	public T retrieve() {
 		return current.data;

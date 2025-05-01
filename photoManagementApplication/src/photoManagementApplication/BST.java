@@ -9,25 +9,29 @@ public class BST <T> {
 	root = current = null;
 	}
 	
+	//Complexity of empty O(1)
 	public boolean empty() {
 	return root == null;
 	}
+	//Complexity of full O(1)
 	public boolean full() {
 	return false;
 	
 	}
+	//Complexity of retrieve O(1)
 	public T retrieve () {
 	return current.data;
 	
 	 }
 	
-	
+	//Complexity of findKey O(n)
 	public boolean findKey(String tkey) {
 	    BSTNode<T> p = root, q = root; // p للبحث و q لحفظ اخر نقطة وصل لها
 	    if (empty())
 	        return false; // الشجرة فاضية
 
 	    while (p != null) {
+	    	
 	        q = p; // حفظ النود الحالية
 	        if (tkey.compareTo(p.key)==0) {
 	            current = p; // وجدنا المفتاح
@@ -42,7 +46,7 @@ public class BST <T> {
 	    return false;
 	}
 	
-	
+	//Complexity of insert O(n) if the BST is unbalanced and if BST is balancedO(log n)
 	public boolean insert(String k, T val) {
 	   
 		if (root == null) {
@@ -64,7 +68,7 @@ public class BST <T> {
 		return true;
 	}
 	
-	
+	//Complexity of removeKey O(n) if the BST is unbalanced and if BST is balancedO(log n)
 	// Method removeKey: iterative
 	public boolean removeKey(String k) {
 	    // Search for k
@@ -123,6 +127,7 @@ public class BST <T> {
 	} 
 	
 
+	//Complexity of inOrder O(n)
 	public void inOrder () {
 		if(root==null) 
 			System.out.println("empty");
