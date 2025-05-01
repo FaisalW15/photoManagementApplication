@@ -12,7 +12,7 @@ public class LinkedList<T> implements Lists<T> {
 	
 	
 	//Complexity of findfirst O(1)
-	public void findfirst() {
+	public void FindFirst() {
 		current = head;
 		
 	}
