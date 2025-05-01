@@ -3,7 +3,7 @@ package photoManagementApplication;
 public class PhotoManager {
 	// Constructor
 	public void PhotoManager(){
-		
+		return;
 	}
 	// Return all managed photos
 	public LinkedList<Photo> getPhotos(){
