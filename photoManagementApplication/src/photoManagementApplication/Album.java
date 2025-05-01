@@ -32,15 +32,42 @@ public class Album {
 	public PhotoManager getManager() {
 		return photoManager;
 	}
+	
+	
+	
+	
+	
+	
 	// Return all photos that satisfy the album condition
 	public LinkedList<Photo> getPhotos(){
+		
+		
+		//two linkedLists. The first one is "photoManagerPhotos" which is basically all the photos we have
+		//and the "photos" list will be filled with the photos that satisfy the condition.
+		LinkedList<Photo> photos = new LinkedList<Photo>();
+		LinkedList<Photo> photoManagerPhotos = photoManager.getPhotos();
+		
+		
 		
 		//split condition and place each tag in between the word "AND" in an array called conditionArray.
 		String[] conditionArray = condition.split("AND");
 		for(int i = 0; i<conditionArray.length; i++) {
+			
 			//get rid of whitespaces before and after conditionArray[i].
 			conditionArray[i] = conditionArray[i].trim();
 		}
+		
+		//go through all photos and check if the conditionArray is a part of the photo we stopped at in photoManagerPhotos.
+		//if it is, add it to "photos" list.
+		photoManagerPhotos.findfirst();
+		while(!(photoManagerPhotos.last())) {
+			
+			if(isAPartOf(conditionArray, photoManagerPhotos.retrieve().getTags())) {
+				photos.insert(photoManagerPhotos.retrieve());
+			}
+		}
+		
+		return photos;
 		
 	}
 	// Return the number of tag comparisons used to find all photos of the album
@@ -62,7 +89,7 @@ public class Album {
 		}
 		
 		//go to start of list
-		list.findFirst();
+		list.FindFirst();
 		
 		//go through list until the end, if the nodes data equals the tag then return true.
 		while(!(list.last())) {
