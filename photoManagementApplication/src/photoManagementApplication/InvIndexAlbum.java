@@ -52,5 +52,15 @@ public class InvIndexAlbum {
 		}
 		return false;
 	}
+	
+	public LinkedList<Photo> getTagPhotos(String tag){
+		
+		LinkedList<Photo> LL = new LinkedList<Photo>();
+		
+		if(invIndexPhotoManager.getPhotos().findKey(tag)) {
+			LL = invIndexPhotoManager.getPhotos().retrieve();
+		}
+		return LL;
+	}
 
 }
