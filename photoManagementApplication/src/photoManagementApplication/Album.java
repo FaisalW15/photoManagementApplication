@@ -59,7 +59,7 @@ public class Album {
 		
 		//go through all photos and check if the conditionArray is a part of the photo we stopped at in photoManagerPhotos.
 		//if it is, add it to "photos" list.
-		photoManagerPhotos.findfirst();
+		photoManagerPhotos.FindFirst();
 		while(!(photoManagerPhotos.last())) {
 			
 			if(isAPartOf(conditionArray, photoManagerPhotos.retrieve().getTags())) {
