@@ -7,7 +7,7 @@ public class InvIndexAlbum {
 	InvIndexPhotoManager invIndexPhotoManager;
 	
 	
-	public InvIndexAlbum(String name, String condition, InvIndexPhotoManager invINdexPhotoManager) {
+	public InvIndexAlbum(String name, String condition, InvIndexPhotoManager invIndexPhotoManager) {
 		
 		this.name = name;
 		this.condition = condition;

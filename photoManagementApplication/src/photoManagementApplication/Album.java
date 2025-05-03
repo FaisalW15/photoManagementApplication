@@ -54,11 +54,21 @@ public class Album {
 	public LinkedList<Photo> getPhotos(){
 		
 		
+		
 		//two linkedLists. The first one is "photoManagerPhotos" which is basically all the photos we have
 		//and the "photos" list will be filled with the photos that satisfy the condition.
 		LinkedList<Photo> photos = new LinkedList<Photo>();
 		LinkedList<Photo> photoManagerPhotos = photoManager.getPhotos();
 		
+		if(photoManagerPhotos.empty()) {
+			return photos;
+		}
+		if(condition == null) {
+			return photos;
+		}
+		if (condition.equals("")){
+			return photoManagerPhotos;
+		}
 		
 		
 		//split condition and place each tag in between the word "AND" in an array called conditionArray.
@@ -77,8 +87,11 @@ public class Album {
 			if(isAPartOf(conditionArray, photoManagerPhotos.retrieve().getTags())) {
 				photos.insert(photoManagerPhotos.retrieve());
 			}
+			photoManagerPhotos.findNext();
 		}
-		
+		if(isAPartOf(conditionArray, photoManagerPhotos.retrieve().getTags())) {
+			photos.insert(photoManagerPhotos.retrieve());
+		}
 		return photos;
 		
 	}
