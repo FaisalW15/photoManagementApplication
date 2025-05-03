@@ -20,6 +20,8 @@ public class Test {
 		
 		
 		//You can get the list of tags of photo1 by calling photo1.getTags().
+		
+		photo1.getTags();
 		//You can write a method that prints the list of tags of photo1.
 		System.out.println("Get album2 name, condition, and photos:");
 		System.out.println("album2 name: " + album2.getName());

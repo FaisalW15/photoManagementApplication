@@ -35,7 +35,7 @@ public class Album {
 	
 	
 	
-	
+
 	
 	
 	// Return all photos that satisfy the album condition
