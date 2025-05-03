@@ -17,9 +17,6 @@ public class Album {
 	 this.photoManager = photoManager;
 	}
 	
-	
-	
-	
 	 // Return the name of the album
 	public String getName() {
 		return name;
@@ -33,6 +30,19 @@ public class Album {
 		return photoManager;
 	}
 	
+	public void printPhotos(){
+		
+		LinkedList<Photo> LL = getPhotos();
+		if(LL.empty()) {
+			return;
+		}
+		LL.FindFirst();
+		while(!LL.last()) {
+			System.out.print(LL.retrieve().path+ ", ");
+			LL.findNext();
+		}
+		System.out.print(LL.retrieve().path);
+	}	
 	
 	
 

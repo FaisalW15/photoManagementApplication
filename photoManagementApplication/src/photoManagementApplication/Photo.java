@@ -5,7 +5,7 @@ public class Photo {
 	LinkedList<String> tags;
 	
 	// Constructor
-	public Photo(String path, LinkedList<String > tags) {
+	public Photo(String path, LinkedList<String> tags) {
 		this.path=path; 
 		this.tags=tags;
 	}
@@ -23,5 +23,18 @@ public class Photo {
 		System.out.print("tags is: ");
 			tags.display();
 	
+	}
+	
+	public void printTags() {
+		
+		if(tags.empty()) {
+			return;
+		}
+		tags.FindFirst();
+		while(!tags.last()) {
+			System.out.print(tags.retrieve() + ", ");
+			tags.findNext();
+		}
+		System.out.print(tags.retrieve());
 	}
 }
