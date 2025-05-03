@@ -139,7 +139,7 @@ public class Test {
 		System.out.print("album2 photos: ");
 		printListOfPhotos(album2.getPhotos());
 		
-		
+
 		
 		
 		

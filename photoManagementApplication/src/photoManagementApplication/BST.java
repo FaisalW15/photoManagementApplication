@@ -164,6 +164,28 @@ public class BST <T> {
 		System.out.println(p.data);
 		inOrder (p.right);
 	}
+	private void inOrder2(BSTNode<LinkedList<Photo>> p) {
+	    if (p == null) { 
+	    	return;
+	    }
+	    inOrder2(p.left);
+	    System.out.println("key= " + p.key);
+	    displayListOfPhoto(p.data);
+	    inOrder2(p.right);
+	}
+	public void displayListOfPhoto(LinkedList<Photo> L) {
+	    if (L.empty()) {
+	        System.out.println("empty list");
+	    } else {
+	        L.FindFirst();
+	        while (!L.last()) {
+	            System.out.print(L.retrieve().path + " ");
+	            L.findNext();
+	        }
+	        System.out.println(L.retrieve().path + " ");
+	        System.out.println("-----------------------------------");
+	    }
+	}
 
 
 
