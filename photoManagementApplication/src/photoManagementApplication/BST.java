@@ -164,6 +164,12 @@ public class BST <T> {
 		System.out.println(p.data);
 		inOrder (p.right);
 	}
+	public void inOrder2() {
+		if (root == null)
+			System.out.println("empty tree");
+		else
+			inOrder2((BSTNode<LinkedList<Photo>>) root);
+	}
 	private void inOrder2(BSTNode<LinkedList<Photo>> p) {
 	    if (p == null) { 
 	    	return;
