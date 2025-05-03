@@ -261,7 +261,7 @@ public class Test1_index {
     //////////////////
 		InvIndexPhotoManager  manager1=new InvIndexPhotoManager();
                  System.out.println("album0 befor adding any photo");
-                 Album_inverted_index album0=new Album_inverted_index("aa","animal  AND grass AND fox", manager1);
+                 InvIndexAlbum album0=new InvIndexAlbum("aa","animal  AND grass AND fox", manager1);
 		 LinkedList<Photo> res=album0.getPhotos();
 		 displayListOfPhoto(res);
                   System.out.println("total number of tag comparision="+album0.getNbComps());
@@ -281,25 +281,25 @@ public class Test1_index {
                 // Album1 A=new Album1("aa","", manager1);
 		//Album1 A=new Album1("aa","animal  AND grass", manager1);
                 System.out.println("-----------------");
-                  Album_inverted_index album1=new Album_inverted_index("Album1", "bear", manager1);
+                InvIndexAlbum album1=new InvIndexAlbum("Album1", "bear", manager1);
                   res=album0.getPhotos();
                   System.out.println("all photos with condition bear are");
 		  displayListOfPhoto(res);
                   System.out.println("total number of tag comparision="+album1.getNbComps());
                    System.out.println("-----------------");
-                Album_inverted_index album2=new Album_inverted_index("Album2", "animal AND grass", manager1); 
+                   InvIndexAlbum album2=new InvIndexAlbum("Album2", "animal AND grass", manager1); 
                   res=album2.getPhotos();
                   System.out.println("all photos with condition animal AND grass are");
 		 displayListOfPhoto(res);
                   System.out.println("total number of tag comparision="+album2.getNbComps());
                    System.out.println("-----------------");
-                 Album_inverted_index album3=new Album_inverted_index("aa","animal  AND grass AND fox", manager1);
+                   InvIndexAlbum album3=new InvIndexAlbum("aa","animal  AND grass AND fox", manager1);
 		  res=album3.getPhotos();
                   System.out.println("all photos with condition animal  AND grass AND fox are");
 		 displayListOfPhoto(res);
                   System.out.println("total number of tag comparision="+album3.getNbComps());
                   System.out.println("-----------------");      
-                  Album_inverted_index album4=new Album_inverted_index("aa","dog  AND grass AND fox", manager1);
+                  InvIndexAlbum album4=new InvIndexAlbum("aa","dog  AND grass AND fox", manager1);
 		  res=album3.getPhotos();
                    System.out.println("all photos with condition dog  AND grass AND fox are");
 		 displayListOfPhoto(res);

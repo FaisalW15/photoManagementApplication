@@ -3,7 +3,7 @@ package photoManagementApplication;
 public class InvIndexPhotoManager 
 {  
 	
-    private BST<LinkedList<Photo>> tagIndex; // this is where we maps tags to photos that have that tag.  
+    public BST<LinkedList<Photo>> tagIndex; // this is where we maps tags to photos that have that tag.  
     
     private LinkedList<Photo> allPhotos; // this is to track all photos in the system. 
     
@@ -471,7 +471,7 @@ public class InvIndexPhotoManager
         
         
     }  
-    
+  
     
     
   

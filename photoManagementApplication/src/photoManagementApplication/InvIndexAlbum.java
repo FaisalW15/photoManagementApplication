@@ -155,6 +155,9 @@ public class InvIndexAlbum {
 		return commonPhotos;
 	}
 	
+	public int getNbComps() {
+		return invIndexPhotoManager.tagIndex.numberOfComparisons;
+	}
 	
 	
 
