@@ -1,9 +1,38 @@
 package photoManagementApplication;
 
+
+
+
+
+
 public class Test {
 	
-	
+	public static void printListOfPhotos(LinkedList<Photo> LL){
+		
+         if(LL==null) {
+        	 System.out.println("null List");
+        	 }
+        else
+        	if(LL.empty()){
+        		System.out.println("empty list");
+        		}
+	 else{
+            
+		LL.FindFirst();
+		while(!LL.last()){
+                       System.out.println(""+LL.retrieve().path+" ");			
+			LL.findNext();
+		}
+		System.out.println("\n"+LL.retrieve().path+" ");
+               // L.retrieve().display();		
+		System.out.println("------------------------------");
+	}
+	}
+
 	public static void main(String[] args) {
+		
+		
+		
 	
 
 		PhotoManager manager = new PhotoManager();
@@ -84,20 +113,34 @@ public class Test {
 		manager.addPhoto(photo8);
 		
 		
+		System.out.println("----------------------------------------");
+		System.out.println("               Index Test");
+		System.out.println("----------------------------------------");
+
 		Album album1 = new Album("Album1", "bear", manager);
 		Album album2 = new Album("Album2", "animal AND grass", manager);
 		System.out.println("Get photo1 path and tags:");
+		System.out.println("");
 		System.out.println("photo1 path: " + photo1.getPath());
+		System.out.println("");
 		System.out.println("photo1 tags: ");
 		photo1.printTags();
 
 		//You can write a method that prints the list of tags of photo1.
+		System.out.println("");
+		System.out.println("");
 
 		System.out.println("Get album2 name, condition, and photos:");
+		System.out.println("");
 		System.out.println("album2 name: " + album2.getName());
+		System.out.println("");
 		System.out.println("album2 condition: " + album2.getCondition());
+		System.out.println("");
 		System.out.print("album2 photos: ");
-		album2.printPhotos();
+		printListOfPhotos(album2.getPhotos());
+		
+		
+		
 		
 		
 		
@@ -105,6 +148,24 @@ public class Test {
 		//You can write a method that prints the list of photos in album2.
 		System.out.println("Delete the photo ’bear.jpg’:");
 	    manager.deletePhoto("bear.jpg");
+	    
+	    
+	 
+		
+
+
+		//You can write a method that prints the list of tags of photo1.
+		System.out.println("");
+		System.out.println("");
+
+		System.out.println("Get album2 name, condition, and photos:");
+		System.out.println("");
+		System.out.println("album2 name: " + album2.getName());
+		System.out.println("");
+		System.out.println("album2 condition: " + album2.getCondition());
+		System.out.println("");
+		System.out.print("album2 photos: ");
+		album2.printPhotos();
 
 	}
 	

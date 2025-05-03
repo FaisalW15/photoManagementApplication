@@ -33,15 +33,17 @@ public class Album {
 	public void printPhotos(){
 		
 		LinkedList<Photo> LL = getPhotos();
-		if(LL.empty()) {
+		if(getPhotos().empty()) {
+			System.out.println("empty.");
 			return;
 		}
 		LL.FindFirst();
 		while(!LL.last()) {
-			System.out.print(LL.retrieve().path+ ", ");
+			System.out.print(LL.retrieve().getPath() + ", ");
 			LL.findNext();
 		}
-		System.out.print(LL.retrieve().path);
+		System.out.print(LL.retrieve().getPath());
+		return;
 	}	
 	
 	
