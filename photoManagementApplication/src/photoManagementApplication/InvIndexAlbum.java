@@ -52,17 +52,17 @@ public class InvIndexAlbum {
 		LinkedList<Photo> photoManagerPhotos = getTagPhotos(conditionArray[0]);
 		
 		for (int i = 1; i<conditionArray.length; i++) {
-			LinkedList<Photo> LL
+			
+			LinkedList<Photo> LL = getTagPhotos(conditionArray[i]);
+			photoManagerPhotos = commonPhotos(photoManagerPhotos, LL);
 		}
 
-		
-		
-		return photos;
+		return photoManagerPhotos;
 		
 	}
 	
 	
-	// Return all photos that satisfy the album condition
+	// Return all photos with this tag
 	public LinkedList<Photo> getTagPhotos(String tag){
 
 		//empty linkedList
