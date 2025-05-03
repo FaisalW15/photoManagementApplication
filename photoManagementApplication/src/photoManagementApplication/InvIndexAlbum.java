@@ -38,7 +38,11 @@ public class InvIndexAlbum {
 		
 		//two linkedLists. The first one is "photoManagerPhotos" which is basically all the photos we have
 		//and the "photos" list will be filled with the photos that satisfy the condition.
-		LinkedList<Photo> photos = new LinkedList<Photo>();		
+		//if no condition then return an empty linkedlist
+		LinkedList<Photo> empty = new LinkedList<Photo>();	
+		if(condition==null || condition.equals("")) {
+			return empty;
+		}
 		
 		
 		//split condition and place each tag in between the word "AND" in an array called conditionArray.
@@ -49,15 +53,17 @@ public class InvIndexAlbum {
 			conditionArray[i] = conditionArray[i].trim();
 		}
 		
-		LinkedList<Photo> photoManagerPhotos = getTagPhotos(conditionArray[0]);
+		//get all photos from the first tag
+		LinkedList<Photo> photos = getTagPhotos(conditionArray[0]);
 		
+		//iterate through the conditionArray, and find the commonPhotos between the list photos and the list LL
 		for (int i = 1; i<conditionArray.length; i++) {
 			
 			LinkedList<Photo> LL = getTagPhotos(conditionArray[i]);
-			photoManagerPhotos = commonPhotos(photoManagerPhotos, LL);
+			photos = commonPhotos(photos, LL);
 		}
 
-		return photoManagerPhotos;
+		return photos;
 		
 	}
 	
