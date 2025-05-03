@@ -75,7 +75,7 @@ public class InvIndexAlbum {
 		LinkedList<Photo> LL = new LinkedList<Photo>();
 		
 		//if we find a the tag entered, return the LinkedList in it (LL)
-		if(invIndexPhotoManager.getPhotos().findKey1(tag)) {
+		if(invIndexPhotoManager.getPhotos().findKeyCounter(tag)) {
 			LL = invIndexPhotoManager.getPhotos().retrieve();
 		}
 		return LL;

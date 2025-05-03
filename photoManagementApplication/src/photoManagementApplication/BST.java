@@ -3,6 +3,7 @@ package photoManagementApplication;
 public class BST <T> {
 	
 	BSTNode<T> root, current;
+	int numberOfComparisons = 0;
 	
 	public BST() {
 	
@@ -24,6 +25,28 @@ public class BST <T> {
 	
 	 }
 	
+	//same as findKey but keeps track of numberOfComparisons 
+	public boolean findKeyCounter(String tkey) {
+		 BSTNode<T> p = root, q = root; 
+		 if (empty()) {
+			 return false;
+		 }
+
+		 while (p != null) {
+			 
+			 numberOfComparisons++;
+
+			 q = p;    
+			 if (tkey.compareTo(p.key)==0) {  
+				 return true;
+			 } else if (tkey.compareTo(p.key)<0)
+				 p = p.left; 
+			 else
+				 p = p.right;  
+		 }
+
+		 return false;
+	}
 	//Complexity of findKey O(n)
 	public boolean findKey(String tkey) {
 	    BSTNode<T> p = root, q = root; // p للبحث و q لحفظ اخر نقطة وصل لها
