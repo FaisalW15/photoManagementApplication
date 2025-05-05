@@ -163,7 +163,7 @@ public class PhotoManager
                 if (!hasTag) 
                 {  
                     allTagsPresent = false;  
-                    break;  
+                    break;  // no need to check other tags.
                 }  
             }  
             
